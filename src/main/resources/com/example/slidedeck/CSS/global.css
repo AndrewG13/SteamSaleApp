@@ -1,0 +1,14 @@
+.root {
+    -fx-background-color: rgba(0,0,0,0.5);
+    -fx-background-radius: 10;
+}
+
+#expand-button {
+    -fx-background-color: #5A5005;
+    -fx-alignment: center;
+}
+
+#mainPane {
+    -fx-pref-width: 600px;
+    -fx-pref-height: 420px;
+}
