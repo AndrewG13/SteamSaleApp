@@ -45,7 +45,7 @@ public class Controller {
         appSettings = new AppSettings();
 
         // set up clock
-        userTime.setText("00:00:00");
+        userTime.setText(GlobalConsts.INITIALIZED_CLOCK_STRING);
         systemTime();
 
         if (debugMode) {
@@ -115,9 +115,12 @@ public class Controller {
     }
 
     @FXML
+    /*
+     * DEBUG MODE
+     *      Any test methods provided here will run if debug mode is set to true
+     */
     private void debug() {
         System.out.println("Controller running in Debug mode");
-
         setImageDisplay("https://cdn.akamai.steamstatic.com/steam/apps/1745510/header_292x136.jpg");
     }
 
