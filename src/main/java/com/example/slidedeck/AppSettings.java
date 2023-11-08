@@ -11,51 +11,51 @@ import java.io.IOException;
 public class AppSettings {
 
     // todo: Lowercase these variables (these are not constants and expected to change
-    String USER_ID;
-    String USER_NAME;
-    int REFRESH_RATE;
+    String user_id;
+    String user_name;
+    int refresh_rate;
     private JSONObject settings;
 
 
     public AppSettings(String id, String name, int refreshRate) {
         this.settings = readAll();
         writeAll(id, name, refreshRate);
-        this.USER_ID = id;
-        this.USER_NAME = name;
-        this.REFRESH_RATE = refreshRate;
+        this.user_id = id;
+        this.user_name = name;
+        this.refresh_rate = refreshRate;
     }
 
     public AppSettings() {
         this.settings = readAll();
-        this.USER_ID = read(GlobalConsts.SETTINGS_USER_ID_STRING);
-        this.USER_NAME = read(GlobalConsts.SETTINGS_USER_NAME_STRING);
-        this.REFRESH_RATE = Integer.parseInt(read(GlobalConsts.SETTINGS_REFRESH_RATE_STRING));
+        this.user_id = read(GlobalConsts.SETTINGS_USER_ID_STRING);
+        this.user_name = read(GlobalConsts.SETTINGS_USER_NAME_STRING);
+        this.refresh_rate = Integer.parseInt(read(GlobalConsts.SETTINGS_REFRESH_RATE_STRING));
     }
 
     public String getUser_ID() {
-        return this.USER_ID;
+        return this.user_id;
     }
 
-    public void setUSER_ID(String id) {
-        this.USER_ID = id;
+    public void setUser_id(String id) {
+        this.user_id = id;
         write(GlobalConsts.SETTINGS_USER_ID_STRING, id);
     }
 
     public String getUser_NAME() {
-        return this.USER_NAME;
+        return this.user_name;
     }
 
-    public void setUSER_NAME(String name) {
-        this.USER_NAME = name;
+    public void setUser_name(String name) {
+        this.user_name = name;
         write(GlobalConsts.SETTINGS_USER_NAME_STRING, name);
     }
 
     public int getRefreshRate() {
-        return this.REFRESH_RATE;
+        return this.refresh_rate;
     }
 
     public void setRefresh_Rate(int rate) {
-        this.REFRESH_RATE = rate;
+        this.refresh_rate = rate;
         write(GlobalConsts.SETTINGS_REFRESH_RATE_STRING, String.valueOf(rate));
     }
 
@@ -103,8 +103,8 @@ public class AppSettings {
 
     @Override
     public String toString() {
-        return GlobalConsts.SETTINGS_USER_ID_STRING + GlobalConsts.COLON_STRING + this.USER_ID + GlobalConsts.NEWLINE_STRING +
-               GlobalConsts.SETTINGS_USER_NAME_STRING + GlobalConsts.COLON_STRING + this.USER_NAME + GlobalConsts.NEWLINE_STRING +
-               GlobalConsts.SETTINGS_REFRESH_RATE_STRING + GlobalConsts.COLON_STRING + this.REFRESH_RATE + GlobalConsts.DOUBLE_NEWLINE_STRING;
+        return GlobalConsts.SETTINGS_USER_ID_STRING + GlobalConsts.COLON_STRING + this.user_id + GlobalConsts.NEWLINE_STRING +
+               GlobalConsts.SETTINGS_USER_NAME_STRING + GlobalConsts.COLON_STRING + this.user_name + GlobalConsts.NEWLINE_STRING +
+               GlobalConsts.SETTINGS_REFRESH_RATE_STRING + GlobalConsts.COLON_STRING + this.refresh_rate + GlobalConsts.DOUBLE_NEWLINE_STRING;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.slidedeck;
 
 import java.util.ArrayList;
+import org.json.simple.JSONObject;
 
 public class Game {
 
@@ -26,8 +27,30 @@ public class Game {
 
     @Override
     public String toString() {
-        String details = "Name: " + name + "\nStoreID: " + storeID + "\nReviews: " + reviews_percent + "%, " + review_desc + " | Release Date: " + release_string + " | Priority: " + priority + "\n";
-        return details + editions + " # of Editions: " + editions.size();
+        String details = GlobalConsts.LISTDATA_STORE_ID_STRING + GlobalConsts.COLON_STRING + storeID + GlobalConsts.NEWLINE_STRING +
+                         GlobalConsts.LISTDATA_NAME_STRING + GlobalConsts.COLON_STRING + name + GlobalConsts.NEWLINE_STRING +
+                         GlobalConsts.LISTDATA_REVIEW_DESC_STRING + GlobalConsts.COLON_STRING + review_desc + GlobalConsts.NEWLINE_STRING +
+                         GlobalConsts.LISTDATA_CAPSULE_STRING + GlobalConsts.COLON_STRING + capsule + GlobalConsts.NEWLINE_STRING +
+                         GlobalConsts.LISTDATA_PRIORITY_STRING + GlobalConsts.COLON_STRING + priority + GlobalConsts.NEWLINE_STRING +
+                         GlobalConsts.LISTDATA_RELEASE_STRING_STRING + GlobalConsts.COLON_STRING + release_string + GlobalConsts.NEWLINE_STRING +
+                         GlobalConsts.LISTDATA_REVIEWS_PERCENT_STRING + GlobalConsts.COLON_STRING + reviews_percent + GlobalConsts.NEWLINE_STRING +
+                         GlobalConsts.LISTDATA_EDITIONS_STRING + GlobalConsts.COLON_STRING + editions + GlobalConsts.DOUBLE_NEWLINE_STRING;
+
+        return details;
+    }
+
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+        json.put(GlobalConsts.LISTDATA_STORE_ID_STRING, this.storeID);
+        json.put(GlobalConsts.LISTDATA_NAME_STRING, this.name);
+        json.put(GlobalConsts.LISTDATA_REVIEW_DESC_STRING, this.review_desc);
+        json.put(GlobalConsts.LISTDATA_CAPSULE_STRING, this.capsule);
+        json.put(GlobalConsts.LISTDATA_PRIORITY_STRING, this.priority);
+        json.put(GlobalConsts.LISTDATA_RELEASE_STRING_STRING, this.release_string);
+        json.put(GlobalConsts.LISTDATA_REVIEWS_PERCENT_STRING, this.reviews_percent);
+        json.put(GlobalConsts.LISTDATA_EDITIONS_STRING, this.editions);
+
+        return json;
     }
 
 }

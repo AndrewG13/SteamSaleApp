@@ -7,14 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.util.Objects;
 
 public class Controller {
 
@@ -111,7 +106,7 @@ public class Controller {
     @FXML
     public void saveUserID() {
         String id = userIDInput.getText();
-        appSettings.setUSER_ID(id);
+        appSettings.setUser_id(id);
     }
 
     @FXML
